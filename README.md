@@ -1,2 +1,2 @@
 # Angular-ecModal  
-自定义AngularJS模态窗体组件
+##自定义的一款AngularJS模态窗体组件
