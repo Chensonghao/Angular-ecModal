@@ -1,18 +1,36 @@
-<script type="text/ng-template" id="modal-1" />
+<script type="text/ng-template" id="modal-1">
 <div class="md-modal md-effect-1">
     <div class="md-content">
         <div class="md-header">
             <h3>Modal Dialog {{md.title}}</h3>
         </div>
         <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
+            <p>使用简介:</p>
             <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-1',    //模板id
+        controller: 'modal-1',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+
+                });</code></pre>
+                </li>
             </ul>
         </div>
         <div class="md-footer">
@@ -21,205 +39,39 @@
     </div>
 </div>
 </script>
-<script type="text/ng-template" id="modal-2" />
+<script type="text/ng-template" id="modal-2">
 <div class="md-modal md-effect-2">
     <div class="md-content">
         <div class="md-header">
             <h3>Modal Dialog {{md.title}}</h3>
         </div>
         <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
+            <p>使用简介:</p>
             <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-        </div>
-        <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
-        </div>
-    </div>
-</div>
-</script>
-<script type="text/ng-template" id="modal-3" />
-<div class="md-modal md-effect-3">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-        </div>
-        <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
-        </div>
-    </div>
-</div>
-</script>
-<script type="text/ng-template" id="modal-4" />
-<div class="md-modal md-effect-4">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-        </div>
-        <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
-        </div>
-    </div>
-</div>
-</script>
-<script type="text/ng-template" id="modal-5" />
-<div class="md-modal md-effect-5">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-        </div>
-        <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
-        </div>
-    </div>
-</div>
-</script>
-<script type="text/ng-template" id="modal-6" />
-<div class="md-modal md-effect-6">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-        </div>
-        <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
-        </div>
-    </div>
-</div>
-</script>
-<script type="text/ng-template" id="modal-7" />
-<div class="md-modal md-effect-7">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-        </div>
-        <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
-        </div>
-    </div>
-</div>
-</script>
-<script type="text/ng-template" id="modal-8" />
-<div class="md-modal md-effect-8">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-        </div>
-        <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
-        </div>
-    </div>
-</div>
-</script>
-<script type="text/ng-template" id="modal-9" />
-<div class="md-modal md-effect-9">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-        </div>
-        <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
-        </div>
-    </div>
-</div>
-</script>
-<script type="text/ng-template" id="modal-10" />
-<div class="md-modal md-effect-10">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-2',    //模板id
+        controller: 'modal-2',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
             </ul>
         </div>
         <div class="md-footer">
@@ -228,145 +80,580 @@
     </div>
 </div>
 </script>
-<script type="text/ng-template" id="modal-11" />
+<script type="text/ng-template" id="modal-3">
+<div class="md-modal md-effect-3">
+    <div class="md-content">
+        <div class="md-header">
+            <h3>Modal Dialog {{md.title}}</h3>
+        </div>
+        <div class="md-body">
+            <p>使用简介:</p>
+            <ul>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-3',    //模板id
+        controller: 'modal-3',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="md-footer">
+            <button ng-click="md.close()">Close me!</button>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="modal-4">
+<div class="md-modal md-effect-4">
+    <div class="md-content">
+        <div class="md-header">
+            <h3>Modal Dialog {{md.title}}</h3>
+        </div>
+        <div class="md-body">
+            <p>使用简介:</p>
+            <ul>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-4',    //模板id
+        controller: 'modal-4',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="md-footer">
+            <button ng-click="md.close()">Close me!</button>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="modal-5">
+<div class="md-modal md-effect-5">
+    <div class="md-content">
+        <div class="md-header">
+            <h3>Modal Dialog {{md.title}}</h3>
+        </div>
+        <div class="md-body">
+            <p>使用简介:</p>
+            <ul>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-5',    //模板id
+        controller: 'modal-5',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="md-footer">
+            <button ng-click="md.close()">Close me!</button>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="modal-6">
+<div class="md-modal md-effect-6">
+    <div class="md-content">
+        <div class="md-header">
+            <h3>Modal Dialog {{md.title}}</h3>
+        </div>
+        <div class="md-body">
+            <p>使用简介:</p>
+            <ul>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-6',    //模板id
+        controller: 'modal-6',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="md-footer">
+            <button ng-click="md.close()">Close me!</button>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="modal-7">
+<div class="md-modal md-effect-7">
+    <div class="md-content">
+        <div class="md-header">
+            <h3>Modal Dialog {{md.title}}</h3>
+        </div>
+        <div class="md-body">
+            <p>使用简介:</p>
+            <ul>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-7',    //模板id
+        controller: 'modal-7',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="md-footer">
+            <button ng-click="md.close()">Close me!</button>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="modal-8">
+<div class="md-modal md-effect-8">
+    <div class="md-content">
+        <div class="md-header">
+            <h3>Modal Dialog {{md.title}}</h3>
+        </div>
+        <div class="md-body">
+            <p>使用简介:</p>
+            <ul>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-8',    //模板id
+        controller: 'modal-8',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="md-footer">
+            <button ng-click="md.close()">Close me!</button>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="modal-9">
+<div class="md-modal md-effect-9">
+    <div class="md-content">
+        <div class="md-header">
+            <h3>Modal Dialog {{md.title}}</h3>
+        </div>
+        <div class="md-body">
+            <p>使用简介:</p>
+            <ul>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-9',    //模板id
+        controller: 'modal-9',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="md-footer">
+            <button ng-click="md.close()">Close me!</button>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="modal-10">
+<div class="md-modal md-effect-10">
+    <div class="md-content">
+        <div class="md-header">
+            <h3>Modal Dialog {{md.title}}</h3>
+        </div>
+        <div class="md-body">
+            <p>使用简介:</p>
+            <ul>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-10',    //模板id
+        controller: 'modal-10',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="md-footer">
+            <button ng-click="md.close()">Close me!</button>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="modal-11">
 <div class="md-modal md-effect-11">
     <div class="md-content">
         <div class="md-header">
             <h3>Modal Dialog {{md.title}}</h3>
         </div>
         <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
+            <p>使用简介:</p>
             <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-11',    //模板id
+        controller: 'modal-11',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
             </ul>
         </div>
         <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
+            <button ng-click="md.close()">Close me!</button>
         </div>
     </div>
 </div>
 </script>
-<script type="text/ng-template" id="modal-12" />
+<script type="text/ng-template" id="modal-12">
 <div class="md-modal md-effect-12">
     <div class="md-content">
         <div class="md-header">
             <h3>Modal Dialog {{md.title}}</h3>
         </div>
         <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
+            <p>使用简介:</p>
             <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-12',    //模板id
+        controller: 'modal-12',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
             </ul>
         </div>
         <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
+            <button ng-click="md.close()">Close me!</button>
         </div>
     </div>
 </div>
 </script>
-<script type="text/ng-template" id="modal-13" />
+<script type="text/ng-template" id="modal-13">
 <div class="md-modal md-effect-13">
     <div class="md-content">
         <div class="md-header">
             <h3>Modal Dialog {{md.title}}</h3>
         </div>
         <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
+            <p>使用简介:</p>
             <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-13',    //模板id
+        controller: 'modal-13',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
             </ul>
         </div>
         <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
+            <button ng-click="md.close()">Close me!</button>
         </div>
     </div>
 </div>
 </script>
-<script type="text/ng-template" id="modal-14" />
+<script type="text/ng-template" id="modal-14">
 <div class="md-modal md-effect-14">
     <div class="md-content">
         <div class="md-header">
             <h3>Modal Dialog {{md.title}}</h3>
         </div>
         <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
+            <p>使用简介:</p>
             <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-14',    //模板id
+        controller: 'modal-14',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
             </ul>
         </div>
         <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
+            <button ng-click="md.close()">Close me!</button>
         </div>
     </div>
 </div>
 </script>
-<script type="text/ng-template" id="modal-15" />
+<script type="text/ng-template" id="modal-15">
 <div class="md-modal md-effect-15">
     <div class="md-content">
         <div class="md-header">
             <h3>Modal Dialog {{md.title}}</h3>
         </div>
         <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
+            <p>使用简介:</p>
             <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-15',    //模板id
+        controller: 'modal-15',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
             </ul>
         </div>
         <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
+            <button ng-click="md.close()">关闭</button>
         </div>
     </div>
 </div>
 </script>
-<script type="text/ng-template" id="modal-16" />
+<script type="text/ng-template" id="modal-16">
 <div class="md-modal md-effect-16">
     <div class="md-content">
         <div class="md-header">
             <h3>Modal Dialog {{md.title}}</h3>
         </div>
         <div class="md-body">
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <p>This is a modal window. You can do the following things with it:</p>
+            <p>使用简介:</p>
             <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                <li><strong>打开:</strong>
+                    <pre><code>
+//依赖注入$ecModal
+
+$ecModal.open({
+        templateUrl: 'modal-16',    //模板id
+        controller: 'modal-16',     //控制器
+        controllerAs: 'md',         
+        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
+        resolve: {
+
+        }
+});</code></pre>
+                </li>
+                <li><strong>关闭:</strong>
+                    <pre><code>
+//依赖注入$ecModalInstance
+
+$ecModalInstance.close().then(function(){
+                    //成功关闭后执行
+
+                    
+                });</code></pre>
+                </li>
             </ul>
         </div>
         <div class="md-footer">
-             <button ng-click="md.close()">Close me!</button>
+            <button ng-click="md.close()">关闭</button>
         </div>
     </div>
 </div>
 </script>
-
 <div class="md-main">
     <div class="md-container">
         <header>
@@ -374,7 +661,7 @@
         </header>
         <div class="main clearfix">
             <div class="column">
-                <p>There are many possibilities for modal overlays to appear. Here are some modern ways of showing them using CSS transitions and animations.</p>
+                <p>一些模态窗体效果Demo展示，请点击右侧按钮。调用方法请阅读源码。</p>
             </div>
             <div class="column">
                 <button ng-click="container.showModal(1)">效果1</button>

@@ -41,11 +41,11 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    visibility: hidden;
+    display: block;
     top: 0;
     left: 0;
     z-index: 1000;
-    opacity: 0;
+    opacity: 1;
     background: rgba(0, 0, 0, 0.5);
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -54,7 +54,7 @@ body {
 
 .md-modal ~ .md-overlay {
     opacity: 1;
-    visibility: visible;
+    display: block;
 }
 
 
@@ -96,13 +96,15 @@ body {
 
 
 /* Effect 1: Fade in and scale up */
-.md-effect-1.md-modal{
-    -webkit-transform:translateX(-50%);
-    -moz-transform:translateX(-50%);
-    -ms-transform:translateX(-50%);
-    -o-transform:translateX(-50%);
-    transform:translateX(-50%);
+
+.md-effect-1.md-modal {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
+
 .md-effect-1 .md-content {
     -webkit-animation: animation-1 0.3s forwards ease;
     -moz-animation: animation-1 0.3s forwards ease;
@@ -132,6 +134,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-1 {
     0% {
         -ms-transform: scale(0.7);
@@ -153,6 +156,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-1 {
     0% {
         transform: scale(0.7);
@@ -166,13 +170,15 @@ body {
 
 
 /* Effect 2: Slide from the right */
-.md-effect-2.md-modal{
-    -webkit-transform:translateX(-50%);
-    -moz-transform:translateX(-50%);
-    -ms-transform:translateX(-50%);
-    -o-transform:translateX(-50%);
-    transform:translateX(-50%);
+
+.md-effect-2.md-modal {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
+
 .md-effect-2 .md-content {
     -webkit-animation: animation-2 0.3s forwards ease;
     -moz-animation: animation-2 0.3s forwards ease;
@@ -202,6 +208,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-2 {
     0% {
         -ms-transform: translateX(20%);
@@ -223,6 +230,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-2 {
     0% {
         transform: translateX(20%);
@@ -236,13 +244,15 @@ body {
 
 
 /* Effect 3: Slide from the bottom */
-.md-effect-3.md-modal{
-    -webkit-transform:translateX(-50%);
-    -moz-transform:translateX(-50%);
-    -ms-transform:translateX(-50%);
-    -o-transform:translateX(-50%);
-    transform:translateX(-50%);
+
+.md-effect-3.md-modal {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
+
 .md-effect-3 .md-content {
     -webkit-animation: animation-3 0.3s forwards ease;
     -moz-animation: animation-3 0.3s forwards ease;
@@ -272,6 +282,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-3 {
     0% {
         -ms-transform: translateY(20%);
@@ -293,6 +304,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-3 {
     0% {
         transform: translateY(20%);
@@ -306,13 +318,15 @@ body {
 
 
 /* Effect 4: Newspaper */
-.md-effect-4.md-modal{
-    -webkit-transform:translateX(-50%);
-    -moz-transform:translateX(-50%);
-    -ms-transform:translateX(-50%);
-    -o-transform:translateX(-50%);
-    transform:translateX(-50%);
+
+.md-effect-4.md-modal {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
+
 .md-effect-4 .md-content {
     -webkit-animation: animation-4 0.5s forwards ease;
     -moz-animation: animation-4 0.5s forwards ease;
@@ -342,6 +356,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-4 {
     0% {
         -ms-transform: scale(0) rotate(720deg);
@@ -363,6 +378,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-4 {
     0% {
         transform: scale(0) rotate(720deg);
@@ -376,6 +392,7 @@ body {
 
 
 /* Effect 5: fall */
+
 .md-effect-5.md-modal {
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -423,6 +440,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-5 {
     0% {
         -ms-transform: translateZ(600px) rotateX(20deg);
@@ -506,6 +524,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-6 {
     0% {
         -ms-transform: translateX(30%) translateZ(600px) rotate(10deg);
@@ -527,6 +546,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-6 {
     0% {
         transform: translate(30%) translateZ(600px) rotate(10deg);
@@ -543,11 +563,11 @@ body {
 
 .md-effect-7.md-modal {
     top: 0;
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
 }
 
 .md-effect-7 .md-content {
@@ -580,6 +600,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-7 {
     0% {
         -ms-transform: translateY(-200%);
@@ -601,6 +622,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-7 {
     0% {
         transform: translateY(-200%);
@@ -616,11 +638,11 @@ body {
 /* Effect 8: 3D flip horizontal */
 
 .md-effect-8.md-modal {
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
     -webkit-perspective: 1300px;
     -moz-perspective: 1300px;
     -ms-perspective: 1300px;
@@ -662,6 +684,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-8 {
     0% {
         -ms-transform: rotateY(-70deg);
@@ -683,6 +706,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-8 {
     0% {
         transform: rotateY(-70deg);
@@ -703,11 +727,11 @@ body {
     -ms-perspective: 1300px;
     -o-perspective: 1300px;
     perspective: 1300px;
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
 }
 
 .md-effect-9 .md-content {
@@ -744,6 +768,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-9 {
     0% {
         -ms-transform: rotateX(-70deg);
@@ -765,6 +790,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-9 {
     0% {
         transform: rotateX(-70deg);
@@ -780,11 +806,11 @@ body {
 /* Effect 10: 3D sign */
 
 .md-effect-10.md-modal {
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
     -webkit-perspective: 1300px;
     -moz-perspective: 1300px;
     -ms-perspective: 1300px;
@@ -829,6 +855,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-10 {
     0% {
         -ms-transform: rotateX(-60deg);
@@ -850,6 +877,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-10 {
     0% {
         transform: rotateX(-60deg);
@@ -863,13 +891,15 @@ body {
 
 
 /* Effect 11: Super scaled */
-.md-effect-11.md-modal{
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+
+.md-effect-11.md-modal {
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
 }
+
 .md-effect-11 .md-content {
     -webkit-animation: animation-11 0.3s forwards ease;
     -moz-animation: animation-11 0.3s forwards ease;
@@ -899,6 +929,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-11 {
     0% {
         -ms-transform: scale(2);
@@ -920,6 +951,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-11 {
     0% {
         transform: scale(2);
@@ -933,14 +965,16 @@ body {
 
 
 /* Effect 12:  Just me */
-.md-effect-12.md-modal{
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+
+.md-effect-12.md-modal {
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
 }
-.md-effect-12 .md-content{
+
+.md-effect-12 .md-content {
     -webkit-animation: animation-12 0.3s forwards ease;
     -moz-animation: animation-12 0.3s forwards ease;
     -ms-animation: animation-12 0.3s forwards ease;
@@ -979,6 +1013,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-12 {
     0% {
         -ms-transform: scale(0.8);
@@ -1000,6 +1035,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-12 {
     0% {
         transform: scale(0.8);
@@ -1015,11 +1051,11 @@ body {
 /* Effect 13: 3D slit */
 
 .md-effect-13.md-modal {
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
     -webkit-perspective: 1300px;
     -moz-perspective: 1300px;
     -ms-perspective: 1300px;
@@ -1030,7 +1066,7 @@ body {
 .md-effect-13 .md-content {
     -webkit-animation: animation-13 .7s forwards ease-out;
     -moz-animation: animation-13 .7s forwards ease-out;
-     -ms-animation: animation-13 .7s forwards ease-out;
+    -ms-animation: animation-13 .7s forwards ease-out;
     -o-animation: animation-13 .7s forwards ease-out;
     animation: animation-13 .7s forwards ease-out;
 }
@@ -1066,6 +1102,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-13 {
     0% {
         -ms-transform: translateZ(-3000px) rotateY(90deg);
@@ -1097,6 +1134,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-13 {
     0% {
         transform: translateZ(-3000px) rotateY(90deg);
@@ -1117,11 +1155,11 @@ body {
 /* Effect 14:  3D Rotate from bottom */
 
 .md-effect-14.md-modal {
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
     -webkit-perspective: 1300px;
     -moz-perspective: 1300px;
     -ms-perspective: 1300px;
@@ -1166,6 +1204,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-14 {
     0% {
         -ms-transform: translateY(100%) rotateX(90deg);
@@ -1187,6 +1226,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-14 {
     0% {
         transform: translateY(100%) rotateX(90deg);
@@ -1202,11 +1242,11 @@ body {
 /* Effect 15:  3D Rotate in from left */
 
 .md-effect-15.md-modal {
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
     -webkit-perspective: 1300px;
     -moz-perspective: 1300px;
     -ms-perspective: 1300px;
@@ -1225,7 +1265,7 @@ body {
     transform-origin: 0 100%;
     -webkit-animation: animation-15 .3s forwards ease;
     -moz-animation: animation-15 .3s forwards ease;
-        -ms-animation: animation-15 .3s forwards ease;
+    -ms-animation: animation-15 .3s forwards ease;
     -o-animation: animation-15 .3s forwards ease;
     animation: animation-15 .3s forwards ease;
 }
@@ -1251,6 +1291,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-15 {
     0% {
         -ms-transform: translateZ(100px) rotateY(90deg);
@@ -1272,6 +1313,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-15 {
     0% {
         transform: translateZ(100px) rotateY(90deg);
@@ -1285,13 +1327,15 @@ body {
 
 
 /* Effect 16 */
-.md-effect-16.md-modal{
-    -webkit-transform:translate(-50%);
-    -moz-transform:translate(-50%);
-    -ms-transform:translate(-50%);
-    -o-transform:translate(-50%);
-    transform:translate(-50%);
+
+.md-effect-16.md-modal {
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
 }
+
 .md-effect-16 .md-content {
     -webkit-animation: animation-16 .3s forwards ease;
     -moz-animation: animation-16 .3s forwards ease;
@@ -1321,6 +1365,7 @@ body {
         opacity: 1;
     }
 }
+
 @-ms-keyframes animation-16 {
     0% {
         -ms-transform: translateY(-20%);
@@ -1342,6 +1387,7 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes animation-16 {
     0% {
         transform: translateY(-20%);

@@ -52,13 +52,13 @@ angular.module('ecModal', [])
         function($timeout, $document, $compile, $rootScope, $q, $injector, $$stackedMap) {
             var openedWindows = $$stackedMap.createNew();
 
-            function removeModalWindow(modalInstance) {              
+            function removeModalWindow(modalInstance) {
                 var modalWindow = openedWindows.get(modalInstance).value;
                 openedWindows.remove(modalInstance);
                 modalWindow.modalDomEl.remove();
                 modalWindow.modalScope.$destroy();
             }
-            var ecModalStack= {
+            var ecModalStack = {
                 open: function(modalInstance, modal) {
                     var main = angular.element(document.querySelector('.md-main'));
                     if (!document.querySelector('.md-overlay')) {
@@ -66,19 +66,17 @@ angular.module('ecModal', [])
                     }
                     var overlay = angular.element(document.querySelector('.md-overlay'));
                     overlay.unbind('click')
-                    overlay.bind('click', function() {
-                        ecModalStack.close(modalInstance);
-                    });
+                    if (modal.overlayClose) {
+                        overlay.bind('click', function() {
+                            ecModalStack.close(modalInstance);
+                        });
+                    }
                     openedWindows.add(modalInstance, {
                         deferred: modal.deferred,
-                        renderDeferred: modal.renderDeferred,
                         modalScope: modal.scope
                     });
 
                     var angularDomEl = angular.element(modal.content);
-                    if (angularDomEl.hasClass('md-effect-18') || angularDomEl.hasClass('md-effect-17') || angularDomEl.hasClass('md-effect-19')) {
-                        $document.find('html').addClass('md-perspective');
-                    }
                     var modalDomEl = $compile(angularDomEl)(modal.scope);
                     openedWindows.top().value.modalDomEl = modalDomEl;
                     main.prepend(modalDomEl);
@@ -104,6 +102,7 @@ angular.module('ecModal', [])
                 templateUrl: null,
                 controller: '',
                 controllerAs: '',
+                overlayClose: false,
                 resolve: {}
             },
             $get: ['$injector', '$rootScope', '$templateRequest', '$controller', '$q', '$ecModalStack',
@@ -111,14 +110,18 @@ angular.module('ecModal', [])
                     return {
                         open: function(modalOptions) {
                             var modalResultDeferred = $q.defer(),
-                                modalOpenedDeferred = $q.defer(),
-                                modalRenderDeferred = $q.defer();
+                                modalOpenedDeferred = $q.defer();
                             var modalInstance = {
                                 result: modalResultDeferred.promise,
                                 opened: modalOpenedDeferred.promise,
-                                rendered: modalRenderDeferred.promise,
                                 close: function(result) {
-                                    return $ecModalStack.close(modalInstance, result);
+                                    var deferred=$q.defer();
+                                    if($ecModalStack.close(modalInstance,result)){
+                                        deferred.resolve(true);
+                                    }else{
+                                        deferred.reject('close failed.')
+                                    }
+                                    return deferred.promise;
                                 }
                             };
                             modalOptions = angular.extend({}, $modalProvider.options, modalOptions);
@@ -182,10 +185,8 @@ angular.module('ecModal', [])
                                 $ecModalStack.open(modalInstance, {
                                     scope: modalScope,
                                     deferred: modalResultDeferred,
-                                    renderDeferred: modalRenderDeferred,
                                     content: tplAndVars[0],
-                                    windowTemplateUrl: modalOptions.windowTemplateUrl,
-                                    size: modalOptions.size
+                                    overlayClose: modalOptions.overlayClose
                                 });
                                 modalOpenedDeferred.resolve(true);
 
@@ -201,12 +202,4 @@ angular.module('ecModal', [])
             ]
         }
         return $modalProvider;
-    })
-    .directive('modal', [function() {
-        return {
-            restrict: 'A',
-            link: function(scope, iElement, iAttrs) {
-
-            }
-        };
-    }])
+    });
