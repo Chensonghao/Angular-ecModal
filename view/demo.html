@@ -1,14 +1,30 @@
-<script type="text/ng-template" id="modal-1">
-<div class="md-modal md-effect-1">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
+<script type="text/ng-template" id="modal-more">
+    <div class="md-modal md-effect-3">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>多层窗体</p>
+
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    </div>
+</script>
+<script type="text/ng-template" id="modal-1">
+    <div class="md-modal md-effect-1">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -20,9 +36,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -30,26 +46,27 @@ $ecModalInstance.close().then(function(){
 
 
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.showModal()">打开</button>
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-2">
-<div class="md-modal md-effect-2">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-2">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -61,9 +78,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -71,26 +88,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-3">
-<div class="md-modal md-effect-3">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-3">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -102,9 +119,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -112,26 +129,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-4">
-<div class="md-modal md-effect-4">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-4">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -143,9 +160,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -153,26 +170,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-5">
-<div class="md-modal md-effect-5">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-5">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -184,9 +201,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -194,26 +211,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-6">
-<div class="md-modal md-effect-6">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-6">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -225,9 +242,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -235,26 +252,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-7">
-<div class="md-modal md-effect-7">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-7">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -266,9 +283,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -276,26 +293,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-8">
-<div class="md-modal md-effect-8">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-8">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -307,9 +324,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -317,26 +334,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-9">
-<div class="md-modal md-effect-9">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-9">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -348,9 +365,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -358,26 +375,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-10">
-<div class="md-modal md-effect-10">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-10">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -389,9 +406,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -399,26 +416,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-11">
-<div class="md-modal md-effect-11">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-11">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -430,9 +447,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -440,26 +457,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-12">
-<div class="md-modal md-effect-12">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-12">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -471,9 +488,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -481,26 +498,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-13">
-<div class="md-modal md-effect-13">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-13">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -512,9 +529,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -522,26 +539,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-14">
-<div class="md-modal md-effect-14">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-14">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -553,9 +570,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -563,26 +580,26 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">Close me!</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
 <script type="text/ng-template" id="modal-15">
-<div class="md-modal md-effect-15">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
-        </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
+    <div class="md-modal md-effect-15">
+        <div class="md-content">
+            <div class="md-header">
+                <h3>Modal Dialog {{md.title}}</h3>
+            </div>
+            <div class="md-body">
+                <p>使用简介:</p>
+                <ul>
+                    <li><strong>打开:</strong>
+                        <pre><code>
 //依赖注入$ecModal
 
 $ecModal.open({
@@ -594,9 +611,9 @@ $ecModal.open({
 
         }
 });</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
+                    </li>
+                    <li><strong>关闭:</strong>
+                        <pre><code>
 //依赖注入$ecModalInstance
 
 $ecModalInstance.close().then(function(){
@@ -604,83 +621,40 @@ $ecModalInstance.close().then(function(){
 
                     
                 });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">关闭</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="md-footer">
+                <button ng-click="md.close()">关闭</button>
+            </div>
         </div>
     </div>
-</div>
 </script>
-<script type="text/ng-template" id="modal-16">
-<div class="md-modal md-effect-16">
-    <div class="md-content">
-        <div class="md-header">
-            <h3>Modal Dialog {{md.title}}</h3>
+
+<div class="md-container">
+    <header>
+        <h1>模态窗体弹出效果</h1>
+    </header>
+    <div class="main clearfix">
+        <div class="column">
+            <p>一些模态窗体效果Demo展示，请点击右侧按钮。调用方法请阅读源码。</p>
         </div>
-        <div class="md-body">
-            <p>使用简介:</p>
-            <ul>
-                <li><strong>打开:</strong>
-                    <pre><code>
-//依赖注入$ecModal
-
-$ecModal.open({
-        templateUrl: 'modal-16',    //模板id
-        controller: 'modal-16',     //控制器
-        controllerAs: 'md',         
-        overlayClose:true,          //默认false，设置true后点击模态窗体其它区域关闭
-        resolve: {
-
-        }
-});</code></pre>
-                </li>
-                <li><strong>关闭:</strong>
-                    <pre><code>
-//依赖注入$ecModalInstance
-
-$ecModalInstance.close().then(function(){
-                    //成功关闭后执行
-
-                    
-                });</code></pre>
-                </li>
-            </ul>
-        </div>
-        <div class="md-footer">
-            <button ng-click="md.close()">关闭</button>
-        </div>
-    </div>
-</div>
-</script>
-<div class="md-main">
-    <div class="md-container">
-        <header>
-            <h1>模态窗体弹出效果</h1>
-        </header>
-        <div class="main clearfix">
-            <div class="column">
-                <p>一些模态窗体效果Demo展示，请点击右侧按钮。调用方法请阅读源码。</p>
-            </div>
-            <div class="column">
-                <button ng-click="container.showModal(1)">效果1</button>
-                <button ng-click="container.showModal(2)">效果2</button>
-                <button ng-click="container.showModal(3)">效果3</button>
-                <button ng-click="container.showModal(4)">效果4</button>
-                <button ng-click="container.showModal(5)">效果5</button>
-                <button ng-click="container.showModal(6)">效果6</button>
-                <button ng-click="container.showModal(7)">效果7</button>
-                <button ng-click="container.showModal(8)">效果8</button>
-                <button ng-click="container.showModal(9)">效果9</button>
-                <button ng-click="container.showModal(10)">效果10</button>
-                <button ng-click="container.showModal(11)">效果11</button>
-                <button ng-click="container.showModal(12)">效果12</button>
-                <button ng-click="container.showModal(13)">效果13</button>
-                <button ng-click="container.showModal(14)">效果14</button>
-                <button ng-click="container.showModal(15)">效果15</button>
-                <button ng-click="container.showModal(16)">效果16</button>
-            </div>
+        <div class="column">
+            <button ng-click="container.showModal(1)">效果1</button>
+            <button ng-click="container.showModal(2)">效果2</button>
+            <button ng-click="container.showModal(3)">效果3</button>
+            <button ng-click="container.showModal(4)">效果4</button>
+            <button ng-click="container.showModal(5)">效果5</button>
+            <button ng-click="container.showModal(6)">效果6</button>
+            <button ng-click="container.showModal(7)">效果7</button>
+            <button ng-click="container.showModal(8)">效果8</button>
+            <button ng-click="container.showModal(9)">效果9</button>
+            <button ng-click="container.showModal(10)">效果10</button>
+            <button ng-click="container.showModal(11)">效果11</button>
+            <button ng-click="container.showModal(12)">效果12</button>
+            <button ng-click="container.showModal(13)">效果13</button>
+            <button ng-click="container.showModal(14)">效果14</button>
+            <button ng-click="container.showModal(15)">效果15</button>
         </div>
     </div>
 </div>

@@ -7,7 +7,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
                     templateUrl: 'modal-' + effectId,
                     controller: 'modal' + effectId,
                     controllerAs: 'md',
-                    overlayClose:true,
+                    overlayClose: true,
                     resolve: {
                         title: function() {
                             return effectId;
@@ -16,11 +16,25 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
                 });
             }
         }])
-        .controller('modal1', ['$ecModalInstance', 'title', function($ecModalInstance, title) {
+        .controller('modal1', ['$ecModal', '$ecModalInstance', 'title','$scope', function($ecModal, $ecModalInstance, title,$scope) {
+            //$scope.index=2;
             var vm = this;
-            vm.title = title;               
+            vm.title = title;
+            vm.showModal = function() {
+                $ecModal.open({
+                    templateUrl: 'modal-more',
+                    controller: 'modal3',
+                    controllerAs: 'md',
+                    overlayClose: true,
+                    resolve: {
+                        title: function() {
+                            return "More";
+                        }
+                    }
+                });
+            }
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal1 closed.');
                 });
             }
@@ -29,7 +43,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal2 closed.');
                 });
             }
@@ -38,7 +52,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal3 closed.');
                 });
             }
@@ -47,7 +61,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal4 closed.');
                 });
             }
@@ -56,7 +70,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal5 closed.');
                 });
             }
@@ -65,7 +79,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal6 closed.');
                 });
             }
@@ -74,7 +88,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal7 closed.');
                 });
             }
@@ -83,7 +97,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal8 closed.');
                 });
             }
@@ -92,7 +106,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal9 closed.');
                 });
             }
@@ -101,7 +115,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal10 closed.');
                 });
             }
@@ -110,7 +124,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal11 closed.');
                 });
             }
@@ -119,7 +133,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal12 closed.');
                 });
             }
@@ -128,7 +142,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal13 closed.');
                 });
             }
@@ -137,7 +151,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal14 closed.');
                 });
             }
@@ -146,17 +160,8 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
-                $ecModalInstance.close().then(function(){
+                $ecModalInstance.close().then(function() {
                     console.log('modal15 closed.');
-                });
-            }
-        }])
-        .controller('modal16', ['$ecModalInstance', 'title', function($ecModalInstance, title) {
-            var vm = this;
-            vm.title = title;
-            vm.close = function() {
-                $ecModalInstance.close().then(function(){
-                    console.log('modal16 closed.');
                 });
             }
         }]);

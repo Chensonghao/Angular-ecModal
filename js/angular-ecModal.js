@@ -1,4 +1,26 @@
 angular.module('ecModal', [])
+    .directive('overlay', ['$ecModalStack', function($ecModalStack) {
+        return {
+            restrict: 'A',
+            replace: true,
+            template: '<div class="md-overlay" ng-style="{\'z-index\': 1040 + (index && 1 || 0) + index*10}"></div>',
+            link: function(scope, element, attrs) {
+                scope.close = function(evt) {
+                    var modal = $ecModalStack.getTop();
+                    if (modal && (evt.target === evt.currentTarget)) {
+                        evt.preventDefault();
+                        evt.stopPropagation();
+                        if (modal.value.overlayClose) {
+                            scope.$apply(function() {
+                                $ecModalStack.close(modal.key);
+                            });
+                        }
+                    }
+                };
+                element.on('click', scope.close);
+            }
+        }
+    }])
     .factory('$$stackedMap', function() {
         return {
             createNew: function() {
@@ -48,45 +70,79 @@ angular.module('ecModal', [])
             }
         };
     })
-    .factory('$ecModalStack', ['$timeout', '$document', '$compile', '$rootScope', '$q', '$injector', '$$stackedMap',
-        function($timeout, $document, $compile, $rootScope, $q, $injector, $$stackedMap) {
+    .factory('$ecModalStack', ['$document', '$compile', '$rootScope', '$q', '$injector', '$$stackedMap',
+        function($document, $compile, $rootScope, $q, $injector, $$stackedMap) {
             var openedWindows = $$stackedMap.createNew();
+            var backdropDomEl, backdropScope;
 
-            function removeModalWindow(modalInstance) {
+            $rootScope.$watch(backdropIndex, function(newBackdropIndex) {
+                if (backdropScope) {
+                    backdropScope.index = newBackdropIndex;
+                }
+            });
+
+            function removeModalWindow(modalInstance, elementToReceiveFocus) {
                 var modalWindow = openedWindows.get(modalInstance).value;
                 openedWindows.remove(modalInstance);
                 modalWindow.modalDomEl.remove();
+                var currBackdropIndex = backdropIndex();
+                if (currBackdropIndex == 0) {
+                    backdropDomEl.remove();
+                    backdropDomEl = undefined;
+                    backdropScope.$destroy();
+                    backdropScope = undefined;
+                }
                 modalWindow.modalScope.$destroy();
+
+                if (elementToReceiveFocus && elementToReceiveFocus.focus) {
+                    elementToReceiveFocus.focus();
+                }
+            }
+
+            function backdropIndex() {
+                var opened = openedWindows.keys();
+                return opened.length;
             }
             var ecModalStack = {
+                getTop: function() {
+                    return openedWindows.top();
+                },
                 open: function(modalInstance, modal) {
-                    var main = angular.element(document.querySelector('.md-main'));
-                    if (!document.querySelector('.md-overlay')) {
-                        main.append('<div class="md-overlay"></div>');
-                    }
-                    var overlay = angular.element(document.querySelector('.md-overlay'));
-                    overlay.unbind('click')
-                    if (modal.overlayClose) {
-                        overlay.bind('click', function() {
-                            ecModalStack.close(modalInstance);
-                        });
-                    }
+                    var modalOpener = $document[0].activeElement
                     openedWindows.add(modalInstance, {
                         deferred: modal.deferred,
+                        overlayClose: modal.overlayClose,
                         modalScope: modal.scope
                     });
 
+                    var body = $document.find('body').eq(0),
+                        currBackdropIndex = backdropIndex();
+                    if (currBackdropIndex > 0 && !backdropDomEl) {
+                        //遮蔽层scope
+                        backdropScope = $rootScope.$new(true);
+                        //遮蔽层index
+                        backdropScope.index = currBackdropIndex;
+                        var angularBackgroundDomEl = angular.element('<div overlay></div>');
+                        backdropDomEl = $compile(angularBackgroundDomEl)(backdropScope);
+                        body.append(angularBackgroundDomEl);
+                    }
+
                     var angularDomEl = angular.element(modal.content);
+
+                    angularDomEl.css({
+                        'z-index': 1050 + backdropIndex() * 10
+                    });
                     var modalDomEl = $compile(angularDomEl)(modal.scope);
                     openedWindows.top().value.modalDomEl = modalDomEl;
-                    main.prepend(modalDomEl);
+                    openedWindows.top().value.modalOpener = modalOpener;
+                    body.append(modalDomEl);
                 },
                 close: function(modalInstance, result) {
                     var modalWindow = openedWindows.get(modalInstance);
                     if (modalWindow) {
                         modalWindow.value.modalScope.$$uibDestructionScheduled = true;
                         modalWindow.value.deferred.resolve(result);
-                        removeModalWindow(modalInstance);
+                        removeModalWindow(modalInstance, modalWindow.value.modalOpener);
                         return true;
                     }
                     return !modalWindow;
@@ -115,10 +171,10 @@ angular.module('ecModal', [])
                                 result: modalResultDeferred.promise,
                                 opened: modalOpenedDeferred.promise,
                                 close: function(result) {
-                                    var deferred=$q.defer();
-                                    if($ecModalStack.close(modalInstance,result)){
+                                    var deferred = $q.defer();
+                                    if ($ecModalStack.close(modalInstance, result)) {
                                         deferred.resolve(true);
-                                    }else{
+                                    } else {
                                         deferred.reject('close failed.')
                                     }
                                     return deferred.promise;
