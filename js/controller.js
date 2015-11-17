@@ -16,8 +16,7 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
                 });
             }
         }])
-        .controller('modal1', ['$ecModal', '$ecModalInstance', 'title','$scope', function($ecModal, $ecModalInstance, title,$scope) {
-            //$scope.index=2;
+        .controller('modal1', ['$ecModalInstance', 'title', function($ecModalInstance, title) {
             var vm = this;
             vm.title = title;
             vm.close = function() {
