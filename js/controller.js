@@ -20,19 +20,6 @@ define(['angular', 'app', 'angular-ecModal'], function(angular) {
             //$scope.index=2;
             var vm = this;
             vm.title = title;
-            vm.showModal = function() {
-                $ecModal.open({
-                    templateUrl: 'modal-more',
-                    controller: 'modal3',
-                    controllerAs: 'md',
-                    overlayClose: true,
-                    resolve: {
-                        title: function() {
-                            return "More";
-                        }
-                    }
-                });
-            }
             vm.close = function() {
                 $ecModalInstance.close().then(function() {
                     console.log('modal1 closed.');
